@@ -32,10 +32,10 @@ export class LoadableComponent implements OnChanges {
   @Input() isElement: boolean;
   @Output() init = new EventEmitter();
 
-  @ViewChild('content', { read: ViewContainerRef, static: true }) content: ViewContainerRef;
-  @ContentChild('loading', { read: TemplateRef, static: false }) loadingTemplate: TemplateRef<any>;
-  @ContentChild('error', { read: TemplateRef, static: false }) errorTemplate: TemplateRef<any>;
-  @ContentChild('timedOut', { read: TemplateRef, static: false }) timeoutTemplate: TemplateRef<any>;
+  @ViewChild('content', { read: ViewContainerRef }) content: ViewContainerRef;
+  @ContentChild('loading', { read: TemplateRef }) loadingTemplate: TemplateRef<any>;
+  @ContentChild('error', { read: TemplateRef }) errorTemplate: TemplateRef<any>;
+  @ContentChild('timedOut', { read: TemplateRef}) timeoutTemplate: TemplateRef<any>;
   private mr: NgModuleRef<any>;
   loading = false;
   loaded = false;
